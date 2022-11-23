@@ -49,7 +49,7 @@ cumprimentaPessoa('Paula') // “Oi gente! Meu nome é Paula”
 
 // Outra forma de escrever função em javascript: Expressão de função
 
-const somando = function(num1, num2) {
+const somando = function (num1, num2) {
     return num1 + num2;
 };
 
@@ -58,3 +58,25 @@ console.log(somando(2, 2));
 
 // A função declarativa pode ser chamada em qualquer parte do código, inclusive antes de sua criação
 // A função expressão de função deve ser chamada somente nas linhas abaixo de sua criação
+
+
+
+// Outra forma de escrever função em javascript: Arrow Function =>
+
+const apresentarArroz = nome => `meu nome é ${nome}`;
+// só um parâmetro, sem parenteses e sem chaves.
+
+const novaSoma = (num1, num2) => num1 + num2;
+// como tem mais de um parametro, é necessário passar entre parenteses.
+// se tiver mais de uma linha de código nessa função, será necessário usar chaves e return.
+
+const somaNumerosPequenos = (num1, num2) => {
+    if (num1 > 10 || num2 > 10) {
+        return 'somente números de 1 à 9!'
+    } else {
+        return num1 + num2;
+    }
+};
+
+console.log(somaNumerosPequenos(9, 9));
+// Hoisting: arroz function (executada na ordem em que é criada; não é possível chamar essa função antes de sua inicialização)
