@@ -1,1 +1,0 @@
-Agora que já vimos um pouco mais dos fundamentos do Javascript, vamos voltar um pouco para entender mais por atrás de como funciona a linguagem e o que são algumas ferramentas que já viemos utilizando.
