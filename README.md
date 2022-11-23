@@ -1,1 +1,1 @@
-Exercícios de Javascript para fixação
+Explicações e Exercícios de Javascript para fixação 
