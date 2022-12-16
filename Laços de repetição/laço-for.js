@@ -134,3 +134,16 @@ O valor de i será diminuído de 2 em 2 a cada iteração (lembrando que a expre
 400
 200
 */
+
+
+
+/*
+Por fim, até agora utilizamos a estrutura for apenas para percorrer arrays, mas ela pode ser utilizada para repetir qualquer instrução conforme a necessidade. Por exemplo, podemos criar dinamicamente um array com todos os números pares de 0 a 100:
+*/
+const numerosPares = [];
+
+for (let i = 0; i <= 100; i += 2) {
+  numerosPares.push(i);
+}
+
+console.log(numerosPares);
