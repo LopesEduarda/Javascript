@@ -89,22 +89,22 @@ O código dentro do segundo for vai acumular o valor de notasGerais[i][j], lembr
 No entanto, este código retorna uma média de 24. Como tal média é possível se não temos nenhum número maior do que 10? O que acontece é que para conseguir a média entre todos os arrays, temos que somar as médias dos arrays de notas, 8+7+9 edividir pela quantidade de arrays em notasGerais.
 */
 
-const Arrnotas1 = [10, 6.5, 8 ,7.5]
+const Arrnotas1 = [10, 6.5, 8, 7.5]
 const Arrnotas2 = [9, 6, 6]
 const Arrnotas3 = [8.5, 9.5]
 
-const ArrnotasGerais = [notas1,notas2,notas3]
+const ArrnotasGerais = [notas1, notas2, notas3]
 
 let Arrmedia = 0
 
 for (let i = 0; i < ArrnotasGerais.length; i++) {
-  for (let j = 0; j < ArrnotasGerais[i].length; j++) {
-    Arrmedia += ArrnotasGerais[i][j]/ArrnotasGerais[i].length;
-  }
+    for (let j = 0; j < ArrnotasGerais[i].length; j++) {
+        Arrmedia += ArrnotasGerais[i][j] / ArrnotasGerais[i].length;
+    }
 }
 // o primeiro for vai executar 3 vezes, pois tem 3 arrays dentro dele
 // o segundo for vai executar iterando pelos valores dos 3 arrays
-media = Arrmedia/ArrnotasGerais.length
+media = Arrmedia / ArrnotasGerais.length
 
 console.log(media)
 
@@ -116,5 +116,21 @@ Declaramos o valor inicial da variável de controle como o valor da última posi
 const numerosArray = [100, 200, 300, 400, 500, 600];
 
 for (let i = numerosArray.length - 1; i >= 0; i--) {
-  console.log(numerosArray[i]);
+    console.log(numerosArray[i]);
 }
+
+
+/*
+Outra possibilidade é alterar a quantidade incrementada ou decrementada, utilizando o mesmo código acima, mas alterando o decremento para i -= 2. Então, teremos o seguinte:
+*/
+const numerosArray2 = [100, 200, 300, 400, 500, 600];
+
+for (let i = numerosArray2.length - 1; i >= 0; i -= 2) {
+    console.log(numerosArray2[i]);
+}
+/*
+O valor de i será diminuído de 2 em 2 a cada iteração (lembrando que a expressão i -= 2 equivale a i = i - 2). Assim, os valores de i serão 5, 3 e 1, e no terminal aparecerá:
+600
+400
+200
+*/
