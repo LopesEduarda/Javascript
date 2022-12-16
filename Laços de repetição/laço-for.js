@@ -107,3 +107,14 @@ for (let i = 0; i < ArrnotasGerais.length; i++) {
 media = Arrmedia/ArrnotasGerais.length
 
 console.log(media)
+
+
+
+/*
+Declaramos o valor inicial da variável de controle como o valor da última posição do array (numeros.length - 1); realizamos um decremento (i--) ao invés de um incremento e a condição de execução é i >= 0. Ou seja, nesse caso, a variável i começará do valor 5 e irá até 0.
+*/
+const numerosArray = [100, 200, 300, 400, 500, 600];
+
+for (let i = numerosArray.length - 1; i >= 0; i--) {
+  console.log(numerosArray[i]);
+}
