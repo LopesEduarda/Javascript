@@ -6,13 +6,15 @@ console.log(array1)
 // 2- Retorne apenas os nomes que tenham 5 letras
 const nomes = ['Lucas', 'Joana', 'Eduarda', 'Luian', 'Fernando'];
 
-
 // 3- Insira dois novos valores no array: 'amarelo' e 'azul'
 const cores = ['Roxo', 'Vermelho', 'Preto', 'Laranja', 'Branco'];
 
 // 4- Junte os dois arrays em um só
 const salaJS = ["Evaldo", "Camis", "Mari"];
 const salaPython = ["Ju", "Leo", "Raquel"];
+
+// 5- Verifique se o nome 'João' está incluso na lista e retorne uma mensagem de sucesso caso esteja e uma de erro caso não esteja
+const lista = ['João', 'Ana', 'Felipe', 'Marcela', 'Junior'];
 
 
 
