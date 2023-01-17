@@ -29,3 +29,17 @@ for (let indice = 0; indice < nome.length; indice++) {
 };
 // nome maiúscula receberá cada letra de Alura e transformará em maiúsculo
 console.log(nomeMaiusculo);
+
+
+// crio o array
+const arrayNums = [1, 2, 3, 4];
+
+// crio a função que irá multiplicar os números por 10
+function multiplicaPorDez(num) {
+    return num * 10;
+};
+
+// utilizo o map para percorrer o array e realizar a multiplicação de cada um dos elementos por 10
+// transformando-os num novo array com o resultado
+const arrayResultado = arrayNums.map(multiplicaPorDez);
+console.log(arrayResultado);
