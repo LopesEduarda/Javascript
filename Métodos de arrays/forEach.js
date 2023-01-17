@@ -32,8 +32,9 @@ console.log(frutas);
 const notas = [10, 6.5, 8, 7.5];
 let notasSoma = 0;
 
-notas.forEach(function (nota) {
+notas.forEach(function (nota, indice) {
     notasSoma += nota;
+    console.log(indice);
 });
 // estrutura de repetição
 // quando uma função é parâmetro de outra, chamamos de callback, "chamar de volta"
