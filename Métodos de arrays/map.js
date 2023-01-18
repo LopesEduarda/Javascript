@@ -1,4 +1,4 @@
-const notas = [10, 9.5, 8, 7, 6];
+const notas = [10, 9.5, 8, 7, 4];
 
 const notasAtualizadas = notas.map((nota) => {
     return nota + 1 >= 10 ? 10 : nota + 1;
@@ -8,7 +8,13 @@ const notasAtualizadas = notas.map((nota) => {
 console.log(notasAtualizadas);
 // o map não altera o array original, portanto é necessário guardar o novo valor numa nova variável/novo array
 
-
+for (i = 0; i < notas.length; i++) {
+    if (notas[i] < 5) {
+        console.log(`Está reprovado!`)
+    } else {
+        console.log(`Está aprovado!`)
+    }
+}
 
 // DESAFIO - Padronizando os nomes
 // Precisamos padronizar a lista de alunos para conter apenas letras maiúsculas
