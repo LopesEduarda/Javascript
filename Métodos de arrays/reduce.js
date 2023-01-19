@@ -18,3 +18,13 @@ function calculaMedia(notasDaSala) {
 console.log(`A média da sala de JavaScript é ${calculaMedia(salaJS)}!`);
 console.log(`A média da sala de JavaScript é ${calculaMedia(salaJava)}!`);
 console.log(`A média da sala de JavaScript é ${calculaMedia(salaPython)}!`);
+
+
+
+const somando = [10, 40, 20, 80];
+
+const resultado = somando.reduce((acumulador, soma) => {
+    return acumulador + soma; 
+}, 0)
+
+console.log(resultado);

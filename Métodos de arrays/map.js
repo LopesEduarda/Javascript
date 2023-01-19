@@ -9,12 +9,15 @@ console.log(notasAtualizadas);
 // o map não altera o array original, portanto é necessário guardar o novo valor numa nova variável/novo array
 
 for (i = 0; i < notas.length; i++) {
+    const aprovado = 'Está aprovado!';
+    const reprovado = 'Está reprovado!';
+
     if (notas[i] < 5) {
-        console.log(`Está reprovado!`)
+        console.log(`Está ${reprovado}!`)
     } else {
-        console.log(`Está aprovado!`)
+        console.log(`Está ${aprovado}!`)
     }
-}
+};
 
 // DESAFIO - Padronizando os nomes
 // Precisamos padronizar a lista de alunos para conter apenas letras maiúsculas
