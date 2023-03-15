@@ -13,4 +13,5 @@ const cliente2Agencia = 1001;
 const cliente2Saldo = 0;
 
 console.log(cliente1Nome);
+console.log(cliente2Nome);
 
