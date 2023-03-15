@@ -27,9 +27,7 @@ let soma = 0;
 for (let elemento of lista2) {
  soma += elemento;
 }
-
 console.log(soma) //15
-
 
 //com forEach
 const lista3 = [1, 2, 3, 4, 5];
