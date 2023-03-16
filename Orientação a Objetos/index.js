@@ -9,7 +9,6 @@ class Cliente {
     saldo;
     rg;
 }
-
 const cliente1 = new Cliente();
 const cliente2 = new Cliente();
 // criando uma instância da minha classe Cliente, que é um 'molde'
