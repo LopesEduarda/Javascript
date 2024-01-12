@@ -1,1 +1,1 @@
-Exercícios e explicações de Javascript para fixação!
+Javascript exercises and explanations for fixing.
