@@ -27,7 +27,7 @@ contaCorrenteRicardo.agencia = 1001;
 
 console.log('Saldo:', contaCorrenteRicardo.saldo);
 contaCorrenteRicardo.saldo = 100;
-console.log('Saldo atualizado:', contaCorrenteRicardo.saldo);
+console.log('Saldo atualizado com sucesso:', contaCorrenteRicardo.saldo);
 let valorSacado = 200;
     if (contaCorrenteRicardo.saldo >= valorSacado) {
         contaCorrenteRicardo.saldo -= valorSacado;

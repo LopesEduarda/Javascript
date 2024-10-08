@@ -1,0 +1,11 @@
+{
+    "extends": ["eslint:recommended"],
+    "plugins": ["prettier"],
+    "rules": {
+      "semi": "error",
+      "no-multiple-empty-lines": ["error", { "max": 2 }],
+      "indent": ["error", 2],
+    },
+    "formatOnSave": true,
+    "extends": ["plugin:prettier/recommended"],
+  }
