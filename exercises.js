@@ -82,3 +82,74 @@ if (notaFinal < 7 || faltas > 4) {
 } else {
     console.log('não foi reprovado por falta!');
 }
+
+
+
+// funções
+// parâmetros / retornos
+// retorno (return)
+
+function exibeInfosEstudante(nome, nota) {
+    return `O nome do estudante é ${nome} e a nota dele é ${nota} !`;
+};
+
+console.log(exibeInfosEstudante('Maria', 8.5));
+exibeInfosEstudante('João', 5.0);
+
+
+// somar 2 números
+function somaDoisNumeros(n1, n2) {
+    return n1 + n2;
+};
+
+console.log(somaDoisNumeros(2, 4));
+
+
+// js tem 3 formas de trabalhar com função:
+// 1- declaração de função
+// 2- expressão de função (abaixo um exemplo), são conhecidas como 'funções anônimas' pq estão dentro de variáveis
+// 3- arrow functions
+
+const estudanteReprovou = function(notaFinal, faltas) {
+    if (notaFinal < 7 && faltas > 4) {
+        return true;
+    } else {
+        return false;
+    }
+};
+// criamos uma função e agora atribuímos o valor dessa função para uma variável
+// uma das diferenças é que a função declarada possui algo do js chamado hoisting: que faz com que ao iniciar a execução do arquivo, ele 'puxe' as variáveis pra cima pra conseguir ler elas antes. por isso, o console.log pode estar antes da declaração da função em si que não fará diferença
+// nos casos da expressão de função o console.log precisa estar APÓS a declaração da função em si
+
+console.log(estudanteReprovou(6, 5));
+console.log(estudanteReprovou(8, 1));
+
+function calculaProduto(a, b = 2, c = 1) {
+  return a * b * c;
+}
+
+const resultado1 = calculaProduto(3);
+const resultado2 = calculaProduto(2, 4);
+const resultado3 = calculaProduto(1, 2, 3);
+const resultado4 = calculaProduto(2, undefined, 5);
+
+console.log("Resultado 1:", resultado1);
+console.log("Resultado 2:", resultado2);
+console.log("Resultado 3:", resultado3);
+console.log("Resultado 4:", resultado4);
+
+// arrow functions
+
+const estudanteReprovouNovamente = (notaFinal, faltas) => {
+    if (notaFinal < 7 && faltas > 4) {
+            return true;
+        } else {
+            return false;
+    };
+};
+
+const exibeNome = (nome) => nome;
+console.log(exibeNome('Fernando'));
+
+
+// funções: é um bloco de código que é declarado uma vez, mas pode ser executado quantas vezes for necessário
