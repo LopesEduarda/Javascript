@@ -1,72 +1,138 @@
-// 1- Criar um loop
-for (let i = 0; i < 10; i++) {
-    // console.log('Criar um loop:', i);
+const pessoas = ['Ana', 'Bruno', 'Carlos', 'Daniela', 'Eduardo'];
+const idades = [20, 25, 30, 35, 40];
+
+// for (const pessoa of pessoas) {  // Veja o "const" aqui
+//     for (const idade of idades) {  // E aqui também
+//         console.log(`${pessoa} tem ${idade} anos.`);
+//     }
+// }
+
+
+for (let index = 0; index < pessoas.length; index++) {
+    console.log(`${pessoas[index]} possui ${idades[index]} anos !`);
 }
-// 2- Exibir uma contagem regressiva de 10 a 0
-// deixe index ser igual à 10. enquanto index for maior ou igual à zero, realize a contagem regressiva de 10 a 0
-for (let i = 10; i >= 0; i--) {
-    // console.log('Contagem regressiva:', i);
-};
 
-// 3- Exibir os números pares de 1 a 10
 /*
-Este é um loop for em JavaScript que faz o seguinte:
+Explicação
+Iniciamos o loop na posição 0 do array.
 
-let i = 2;: Isso inicializa uma variável chamada i com o valor 2. Esta é a variável de controle do loop, e ela começa em 2.
+O loop continua enquanto o índice (index) for menor que o tamanho do array (pessoas.length).
 
-i <= 10;: Esta é a condição de continuação do loop. Enquanto i for menor ou igual a 10, o loop continuará a ser executado. O loop vai parar quando i for maior do que 10.
+Para cada iteração, acessamos o elemento correspondente nos arrays pessoas, idades, e cores usando o mesmo índice (index).
 
-i += 2: Isso é chamado de atualização da variável de controle. A cada iteração do loop, i é incrementado em 2. Isso significa que a cada passo do loop, i aumenta em 2 unidades.
-
-console.log(i);: Isso é o corpo do loop. Dentro do loop, ele exibe o valor atual de i no console.
-
-Aqui está uma descrição passo a passo do que acontece:
-
-Inicialmente, i é definido como 2.
-O loop verifica se a condição i <= 10 é verdadeira. Como 2 é menor ou igual a 10, o loop é executado.
-O valor atual de i, que é 2, é impresso no console.
-A variável i é então incrementada em 2, tornando-se 4.
-O loop volta ao passo 2 para verificar a condição novamente.
-O processo se repete até que i seja maior do que 10. Quando i se torna 12, a condição i <= 10 é falsa, e o loop para.
-Portanto, este loop for imprime os números pares de 2 a 10 no console, incrementando i em 2 unidades a cada iteração. O resultado será:
-2, 4, 6, 8, 10
+Dessa forma, pessoas[index] retorna o elemento atual do array pessoas, idades[index] retorna o elemento correspondente do array idades, e cores[index] retorna o elemento do array cores.
 */
-for (let i = 2; i <= 10; i += 2) {
-    // console.log(i);
-};
 
-for (let i = 2; i <= 10; i += 2) {
-    if (i % 2 === 0) {
-        // console.log(i + ' é um número par');
+const paises = ['Brasil', 'Argentina', 'França', 'Japão'];
+const capitais = ['Brasília', 'Buenos Aires', 'Paris', 'Tóquio'];
+
+for (let index = 0; index < paises.length; index++) {
+    console.log(`a capital do ${paises[index]} é ${capitais[index]}`)
+}
+
+// Objetivo: Imprimir apenas os animais que têm mais de 2 anos. Exemplo: "O Cachorro tem 5 anos."
+
+const animais = ['Gato', 'Cachorro', 'Coelho', 'Papagaio'];
+const idadesAnimais = [2, 5, 1, 3];
+
+for (let index = 0; index < idadesAnimais.length; index++) {
+    if (idadesAnimais[index] >= 2) {
+        console.log(`a idade do ${animais[index]} é ${idadesAnimais[index]}, ou seja, MAIOR ou IGUAL a 2!`);
     } else {
-        // console.log(i + ' é um número ímpar');
+        console.log(`a idade do ${animais[index]} é ${idadesAnimais[index]}, ou seja, MENOR do que 2!`);
     }
-};
-  
+}
 
-// 4- Exibir os números primos de 1 a 100
-// Números primos são aqueles divisíveis apenas por 1 e por eles mesmos. 
+// Objetivo: Exibir uma frase que combine fruta, cor e sazonalidade, por exemplo: "A Uva é Roxa e está em sua melhor época na Primavera."
 
-for (let i = 2; i <= 100; i++) {
-    let isPrime = true;
+const frutas = ['Maçã', 'Banana', 'Uva', 'Laranja'];
+const cores = ['Vermelha', 'Amarela', 'Roxa', 'Laranja'];
+const sazonalidade = ['Outono', 'Verão', 'Primavera', 'Inverno'];
 
-    for (let j = 2; j <= Math.sqrt(i); j++) {
-      if (i % j == 0) {
-        isPrime = false;
-        break;
-      }
+for (let index = 0; index < frutas.length; index++) {
+    console.log(`A ${frutas[index]} é ${cores[index]} e está em sua melhor forma na ${sazonalidade[index]}.`)
+}
+
+if (frutas.includes('Banana')) {
+    console.log('Existe essa fruta no array!');
+} else {
+    console.log('Não possui essa fruta no array!');
+}
+
+
+
+const alunos = ['João', 'Maria', 'Pedro'];
+const disciplinas = ['Matemática', 'História', 'Ciências'];
+const notas = [
+    [8, 6, 9],  // Notas do João
+    [5, 7, 8],  // Notas da Maria
+    [7, 6, 7]   // Notas do Pedro
+];
+
+
+for (let i = 0; i < alunos.length; i++) {
+    for (let j = 0; j < disciplinas.length; j++) {
+        if (notas[i][j] >= 7) {
+            console.log(`${alunos[i]} tirou ${notas[i][j]} em ${disciplinas[j]}: Aprovado!`);
+        } else {
+            console.log(`${alunos[i]} tirou ${notas[i][j]} em ${disciplinas[j]}: Reprovado!`);
+        }
     }
-    if (isPrime) {
-    //   console.log(i);
+}
+
+/*
+Explicação:
+
+O primeiro loop (for (let i = 0; i < alunos.length; i++)) percorre cada aluno.
+O segundo loop (for (let j = 0; j < disciplinas.length; j++)) percorre cada disciplina e nota para o aluno atual.
+A condição notas[i][j] >= 7 verifica se a nota é suficiente para aprovação.
+*/
+
+const funcionarios = ['Alice', 'Roberto', 'Carla'];
+const projetos = ['Projeto A', 'Projeto B', 'Projeto C'];
+const horasTrabalhadas = [
+    [42, 35, 40],  // Horas da Alice
+    [38, 45, 50],  // Horas do Roberto
+    [40, 39, 42]   // Horas da Carla
+];
+
+for (let index = 0; index < funcionarios.length; index++) {
+    for (let indexProjetos = 0; indexProjetos < projetos.length; indexProjetos++) {
+        if (horasTrabalhadas[index][indexProjetos] >= 40) {
+            console.log(`O funcionário ${funcionarios[index]} trabalhou ${horasTrabalhadas[index][indexProjetos]} horas no ${projetos[indexProjetos]}: Atingiu a meta!`);
+        } else {
+            console.log(`O funcionário ${funcionarios[index]} trabalhou ${horasTrabalhadas[index][indexProjetos]} horas no ${projetos[indexProjetos]}: Não atingiu a meta!`);
+        }
     }
-  }
+}
 
-// 5- Crie um programa que leia um número do usuário e retorne o número em ordem reversa
+/*
+Objetivo: Percorrer cada projeto para o funcionário atual.
+Variável indexProjetos: Começa em 0 e vai até o tamanho do array projetos.
+O que acontece: Para cada valor de indexProjetos, estamos lidando com um projeto específico do funcionário atual.
 
-const userNumber = prompt('Digite um número');
+Por exemplo:
+Se index = 0 (funcionário 'Alice'):
+Na 1ª iteração de indexProjetos: indexProjetos = 0 → projetos[0] é 'Projeto A'.
+Na 2ª iteração de indexProjetos: projetos[1] é 'Projeto B'.
+Na 3ª iteração de indexProjetos: projetos[2] é 'Projeto C'.
 
-const reversedNum = userNumber => parseFloat(userNumber.toString().split('').reverse().join('')) * Math.sign(userNumber);
 
-console.log(reversedNum);
+Objetivo: Verificar se o funcionário trabalhou pelo menos 40 horas no projeto atual.
+Acesso à matriz horasTrabalhadas:
+horasTrabalhadas[index][indexProjetos] nos dá a quantidade de horas que o funcionário atual trabalhou no projeto atual.
 
-  
+Por exemplo:
+Se index = 0 e indexProjetos = 0, acessamos horasTrabalhadas[0][0], que é 42 (horas de Alice no Projeto A).
+Se a condição for verdadeira (ou seja, horas trabalhadas são maiores ou iguais a 40), imprimimos que o funcionário "Atingiu a meta".
+Se a condição for falsa, imprimimos que o funcionário "Não atingiu a meta".
+*/
+
+/*
+Explicação:
+
+Loop externo: Itera por cada funcionário.
+Loop interno: Itera por cada projeto e horas trabalhadas para o funcionário atual.
+
+Condição: Verifica se o funcionário atingiu a meta de 40 horas em cada projeto e imprime a mensagem correspondente.
+*/

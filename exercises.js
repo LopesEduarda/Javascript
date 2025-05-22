@@ -1,155 +1,59 @@
-// curso javascript: utilizando tipos, variáveis e funções
+// lógicas de programação - javascript
 
-const student = 'maria';
-const isApproved = false;
+// 1- Crie uma função que receba uma string e retorne a string invertida.
 
-if (isApproved === true) {
-    console.log('boas festas!');
-} else {
-    console.log('ops!');
-};
+// lógicas de programação - javascript
 
+// 1- Crie uma função que receba uma string e retorne a string invertida.
 
-// ausencia de valores: null e undefined
+function reverseString(string) {
+    return string.split('').reverse().join('');
+}
+// In this updated code, the split('') method is used to convert the string into an array of characters. Then, the reverse() method is applied to reverse the order of the elements in the array. Finally, the join('') method is used to convert the array back into a string.
 
-let studantName;
-console.log(studantName);
-// por padrão é undefined
-
-let studentPhone = null;
-console.log(typeof studentPhone);
-// retorna, por um erro do js, 'object'. tem outra forma de verificar o tipo de null
+console.log(reverseString('Teste'));
 
 
-// tipagem tinâmica e estática
+// 2- retornar apenas números pares
 
-// A sintaxe do JS não requer que o tipo seja definido de forma explícita quando declaramos variáveis, uma vez que JavaScript é uma linguagem dinamicamente tipada.
+const numbers = [2, 4, 6, 8, 9, 11, 13];
 
-let exemplo = 10; // exemplo é do tipo número (Number)
-console.log(exemplo); // Saída: 10
+function returnNumbers(numbers) {
+    const evenNumbers = []; // Criar um array para armazenar os números pares
 
-exemplo = 'Olá, mundo!'; // agora exemplo é uma string (String)
-console.log(exemplo); // Saída: Olá, mundo!
-
-exemplo = true; // exemplo agora é um booleano (Boolean)
-console.log(exemplo); // Saída: truez
-
-// Essa característica proporciona flexibilidade ao desenvolvimento, mas também demanda maior atenção na manipulação de dados, já que uma mesma variável pode armazenar diferentes tipos de dados ao longo do programa, o que pode resultar em erros se o programa receber um tipo de dado diferente do esperado.
-
-Number(true); // 1
-Number(false); // 0
-
-let valor3 = 0;
-console.log(typeof valor3);
-
-const salarioMensal = 3500;
-const despesasFixas = 1200;
-const despesasVariaveis = 500;
-const economiasMensais = 800;
-const bonusAnual = 3000;
-
-const resultado = (salarioMensal - despesasFixas - despesasVariaveis) * 12 + (economiasMensais * 12) + bonusAnual;
-console.log('Resultado:', resultado);
-
-let contadorVisitas = 0;
-contadorVisitas = contadorVisitas + 1;
-contadorVisitas += 1;
-contadorVisitas++;
-
-// Para o propósito prático deste exercício, ambas as operações resultam no incremento de contadorVisitas em 1 unidade. Porém, há uma diferença sutil entre elas. A expressão contadorVisitas += 1 é uma operação de atribuição aditiva que incrementa contadorVisitas em 1 unidade, enquanto a operação contadorVisitas++ é um operador de incremento pós-fixo que primeiro retorna o valor original de contadorVisitas e depois o incrementa em 1.
-
-let estoqueProdutoA = 50;
-
-function realizarVenda(quantidade) {
-    if (quantidade > estoqueProdutoA) {
-        console.log('Quantidade de estoque insuficiente!');
-    } else {
-        estoqueProdutoA -= quantidade;
-        console.log(`Venda realizada com sucesso! Novo estoque: ${estoqueProdutoA}`);
+    for (const number of numbers) {
+        if (number % 2 === 0) { // Verificar se o número é divisível por 2
+            evenNumbers.push(number); // Adicionar ao array de números pares
+        }
     }
-};
-
-realizarVenda(50);
-
-
-// operadores lógicos
-
-const notaFinal = 7;
-const faltas = 5;
-
-if (notaFinal < 7 || faltas > 4) {
-    console.log('reprovado!');
-} else {
-    console.log('não foi reprovado por falta!');
+    return evenNumbers; // Retornar o array com números pares
 }
 
+console.log(returnNumbers(numbers)); // [2, 4, 6, 8]
 
+// outro método para comprar
+const numbers2 = [2, 4, 6, 8, 9, 11, 13];
 
-// funções
-// parâmetros / retornos
-// retorno (return)
-
-function exibeInfosEstudante(nome, nota) {
-    return `O nome do estudante é ${nome} e a nota dele é ${nota} !`;
-};
-
-console.log(exibeInfosEstudante('Maria', 8.5));
-exibeInfosEstudante('João', 5.0);
-
-
-// somar 2 números
-function somaDoisNumeros(n1, n2) {
-    return n1 + n2;
-};
-
-console.log(somaDoisNumeros(2, 4));
-
-
-// js tem 3 formas de trabalhar com função:
-// 1- declaração de função
-// 2- expressão de função (abaixo um exemplo), são conhecidas como 'funções anônimas' pq estão dentro de variáveis
-// 3- arrow functions
-
-const estudanteReprovou = function(notaFinal, faltas) {
-    if (notaFinal < 7 && faltas > 4) {
-        return true;
-    } else {
-        return false;
-    }
-};
-// criamos uma função e agora atribuímos o valor dessa função para uma variável
-// uma das diferenças é que a função declarada possui algo do js chamado hoisting: que faz com que ao iniciar a execução do arquivo, ele 'puxe' as variáveis pra cima pra conseguir ler elas antes. por isso, o console.log pode estar antes da declaração da função em si que não fará diferença
-// nos casos da expressão de função o console.log precisa estar APÓS a declaração da função em si
-
-console.log(estudanteReprovou(6, 5));
-console.log(estudanteReprovou(8, 1));
-
-function calculaProduto(a, b = 2, c = 1) {
-  return a * b * c;
+function returnNumbers(numbers2) {
+    return numbers2.filter(number => number % 2 === 0); // Filtrar números pares
 }
 
-const resultado1 = calculaProduto(3);
-const resultado2 = calculaProduto(2, 4);
-const resultado3 = calculaProduto(1, 2, 3);
-const resultado4 = calculaProduto(2, undefined, 5);
-
-console.log("Resultado 1:", resultado1);
-console.log("Resultado 2:", resultado2);
-console.log("Resultado 3:", resultado3);
-console.log("Resultado 4:", resultado4);
-
-// arrow functions
-
-const estudanteReprovouNovamente = (notaFinal, faltas) => {
-    if (notaFinal < 7 && faltas > 4) {
-            return true;
-        } else {
-            return false;
-    };
-};
-
-const exibeNome = (nome) => nome;
-console.log(exibeNome('Fernando'));
+console.log(returnNumbers(numbers)); // [2, 4, 6, 8]
 
 
-// funções: é um bloco de código que é declarado uma vez, mas pode ser executado quantas vezes for necessário
+// filtrar pessoas com mais de 18 anos
+// Por que usamos (arr)?
+// A função filterAdults é genérica, ou seja, pode funcionar para qualquer array, não apenas o people. Passar arr como argumento permite que a função seja reutilizável com outros arrays,
+const people = [
+    { name: 'Ana', age: 17 },
+    { name: 'Carlos', age: 25 },
+    { name: 'João', age: 15 },
+    { name: 'Maria', age: 20 },
+];
+
+function filterAdults(arr) {
+    return arr.filter(person => person.age >= 18);
+}
+
+console.log(filterAdults(people));
+// [{ name: 'Carlos', age: 25 }, { name: 'Maria', age: 20 }]
