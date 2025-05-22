@@ -42,10 +42,10 @@ for (let i = 2; i <= 10; i += 2) {
         // console.log(i + ' é um número ímpar');
     }
 };
-  
+
 
 // 4- Exibir os números primos de 1 a 100
-// Números primos são aqueles divisíveis apenas por 1 e por eles mesmos. 
+// Números primos são aqueles divisíveis apenas por 1 e por eles mesmos.
 
 for (let i = 2; i <= 100; i++) {
     let isPrime = true;
@@ -61,12 +61,109 @@ for (let i = 2; i <= 100; i++) {
     }
   }
 
-// 5- Crie um programa que leia um número do usuário e retorne o número em ordem reversa
 
-const userNumber = prompt('Digite um número');
+// For - Ideal para quando você sabe quantas vezes deseja repetir um bloco de código.
+// While - Útil quando você quer que o código continue repetindo enquanto uma condição for verdadeira.
+// For...of e For...in - Loops especiais usados principalmente com arrays e objetos.
 
-const reversedNum = userNumber => parseFloat(userNumber.toString().split('').reverse().join('')) * Math.sign(userNumber);
 
-console.log(reversedNum);
+// 1. LOOP FOR
+for (let index = 0; index < 3; index++) {
+    console.log(index);
+};
 
-  
+// 2. Loop While
+let i = 0;
+
+while (i < 3) {
+    console.log(i);
+    i++;
+};
+
+// 3. Loop For...of (para arrays)
+const frutas = ['banana', 'maçã', 'larança', 'mamão'];
+
+for (const fruta of frutas) {
+    // console.log('Frutas:', fruta);
+};
+
+function frutaNoArray(fruta) {
+    if (frutas.includes(fruta)) {
+        console.log(`${fruta} está presente no array!`);
+    } else {
+        console.log(`${fruta} não está presente no array`);
+    }
+}
+
+frutaNoArray('arroz');
+frutaNoArray('banana');
+
+// 4. Loop For...in (para objetos)
+const pessoa = { nome: 'Maria', idade: 25 };
+
+for (const chave in pessoa) {
+    console.log(chave, pessoa[chave]);
+};
+// para cada chave do objeto pessoa eu quero que imprima a chave + o objeto com o valor
+
+
+
+
+// exercícios
+// 1- Exibir Nomes de Alunos
+
+const alunos = ['João', 'Maria', 'Pedro', 'Ana'];
+
+for (const aluno of alunos) {
+    // console.log(aluno);
+};
+
+// Modifique o código para exibir: "Aluno: João", "Aluno: Maria", etc.
+
+for (const aluno of alunos) {
+    aluno === 'João' || aluno === 'Maria' ? console.log(`Aluno: ${aluno}`) : false;
+};
+
+
+// 2- Somar Números de um Array
+// Dado um array de números, some todos os elementos e exiba o total.
+
+const numeros = [2, 4, 6, 8, 10];
+let soma = 0;
+
+for (const numero of numeros) {
+    soma += numero;
+};
+
+console.log("A soma é:", soma);
+
+
+// 3- Dobrar Números de um Array
+// Dado um array de números, crie um novo array onde cada número é o dobro do original.
+
+const numbers = [3, 7, 12, 5, 8];
+const numbersX2 = [];
+console.log('Numeros originais:', numbers);
+
+for (const numero of numbers) {
+    numbersX2.push(numero * 2);
+};
+console.log('Numeros após o incremento:', numbersX2);
+
+
+// Nomes com Mais de 4 Letras
+// Dado um array de nomes, filtre apenas os nomes que têm mais de 4 letras e, em seguida, coloque esses nomes em letras maiúsculas.
+
+const nomes = ['Ana', 'Bruno', 'Carlos', 'Diana', 'Eli'];
+
+// Objetivo:
+// Primeiro, usando filter e For...of, filtre os nomes que têm mais de 4 letras e coloque-os em um novo array.
+// Depois, usando map e For...of, transforme os nomes filtrados em letras maiúsculas e exiba o resultado no console.
+
+const nomes2 = nomes.filter((nome) => {
+
+    for (const nome of nomes) {
+        nome.length > 4 ? console.log('o nome possui mais de 4 letras!') : false;
+    }
+
+});
