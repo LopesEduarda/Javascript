@@ -160,3 +160,20 @@ function verificarSeElementoEstaNoArray(array, elemento) {
 }
 
 console.log(verificarSeElementoEstaNoArray(array, 'maçã')); // true
+
+
+// verificar quantas vezes um elemento aparece no array
+function contarQuantasVezes(frase, letra) {
+    let contador = 0;
+
+    for (let index = 0; index < frase.length; index++) {
+        console.log('index', index); // 0, 1, 2, 3, 4, 5
+        if (frase[index] === letra) {
+            contador++;
+            console.log(`A letra ${letra} aparece ${contador} vezes na frase ${frase} !`);
+        }
+    }
+    return contador;
+}
+
+console.log(contarQuantasVezes("banana", "a"));
