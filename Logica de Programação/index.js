@@ -168,6 +168,7 @@ function contarQuantasVezes(frase, letra) {
 
     for (let index = 0; index < frase.length; index++) {
         console.log('index', index); // 0, 1, 2, 3, 4, 5
+        // index é o índice da letra
         if (frase[index] === letra) {
             contador++;
             console.log(`A letra ${letra} aparece ${contador} vezes na frase ${frase} !`);
@@ -177,3 +178,20 @@ function contarQuantasVezes(frase, letra) {
 }
 
 console.log(contarQuantasVezes("banana", "a"));
+
+function contarVogais(frase) {
+    let contador = 0;
+
+    for (let index = 0; index < frase.length; index++) {
+        const vogais = ['a', 'e', 'i', 'o', 'u'];
+        // verificando se a letra é uma vogal
+        if (vogais.includes(frase[index])) {
+            // a lógica não é "se há vogais numa frase", mas sim "se os vogais estão presentes na frase", percorrendo cada uma das letras (index)
+            console.log('vogais', vogais); // ['a', 'e', 'i', 'o', 'u']
+            contador++;
+        }
+    }
+    return contador;
+}
+
+console.log(contarVogais("banana")); // 3
