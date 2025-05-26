@@ -195,3 +195,23 @@ function contarVogais(frase) {
 }
 
 console.log(contarVogais("banana")); // 3
+
+function contarConsoantes(frase) {
+    let contador = 0;
+    const consoantes = 'bcdfghjklmnpqrstvwxyz';
+    const quaisSaoAsConsoantes = [];
+
+    for (let index = 0; index < frase.length; index++) {
+        // verificando se a letra é uma consoante
+        if (consoantes.includes(frase[index].toLowerCase())) {
+            contador++;
+            quaisSaoAsConsoantes.push(frase[index].toLowerCase());
+        }
+    }
+    return {
+        total: contador,
+        quais: `As consoantes presentes na palavra são: ${quaisSaoAsConsoantes}`
+    };
+}
+
+console.log(contarConsoantes("banana")); // 3
