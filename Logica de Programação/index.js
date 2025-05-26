@@ -160,3 +160,58 @@ function verificarSeElementoEstaNoArray(array, elemento) {
 }
 
 console.log(verificarSeElementoEstaNoArray(array, 'maçã')); // true
+
+
+// verificar quantas vezes um elemento aparece no array
+function contarQuantasVezes(frase, letra) {
+    let contador = 0;
+
+    for (let index = 0; index < frase.length; index++) {
+        console.log('index', index); // 0, 1, 2, 3, 4, 5
+        // index é o índice da letra
+        if (frase[index] === letra) {
+            contador++;
+            console.log(`A letra ${letra} aparece ${contador} vezes na frase ${frase} !`);
+        }
+    }
+    return contador;
+}
+
+console.log(contarQuantasVezes("banana", "a"));
+
+function contarVogais(frase) {
+    let contador = 0;
+
+    for (let index = 0; index < frase.length; index++) {
+        const vogais = ['a', 'e', 'i', 'o', 'u'];
+        // verificando se a letra é uma vogal
+        if (vogais.includes(frase[index])) {
+            // a lógica não é "se há vogais numa frase", mas sim "se os vogais estão presentes na frase", percorrendo cada uma das letras (index)
+            console.log('vogais', vogais); // ['a', 'e', 'i', 'o', 'u']
+            contador++;
+        }
+    }
+    return contador;
+}
+
+console.log(contarVogais("banana")); // 3
+
+function contarConsoantes(frase) {
+    let contador = 0;
+    const consoantes = 'bcdfghjklmnpqrstvwxyz';
+    const quaisSaoAsConsoantes = [];
+
+    for (let index = 0; index < frase.length; index++) {
+        // verificando se a letra é uma consoante
+        if (consoantes.includes(frase[index].toLowerCase())) {
+            contador++;
+            quaisSaoAsConsoantes.push(frase[index].toLowerCase());
+        }
+    }
+    return {
+        total: contador,
+        quais: `As consoantes presentes na palavra são: ${quaisSaoAsConsoantes}`
+    };
+}
+
+console.log(contarConsoantes("banana")); // 3
