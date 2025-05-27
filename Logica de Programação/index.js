@@ -215,3 +215,37 @@ function contarConsoantes(frase) {
 }
 
 console.log(contarConsoantes("banana")); // 3
+
+function contarNumeros(array) {
+    let contador = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        // verifica se o elemento é um número
+        if (typeof array[i] === 'number') {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+// Exemplos de uso:
+const arrayMisto = [1, 'texto', 2, true, 3, 4, 'outro texto', 5];
+console.log(contarNumeros(arrayMisto)); // Deve retornar 5
+
+function contarCaracteres(texto) {
+    let contador = 0;
+
+    for (let i = 0; i < texto.length; i++) {
+        contador++;
+    }
+    return contador;
+}
+
+console.log(contarCaracteres("banana")); // 6
+
+function contarPalavras(frase) {
+    const palavras = frase.split(' ');
+    return palavras.length;
+}
+
+console.log(contarPalavras("banana é uma fruta")); // 3
