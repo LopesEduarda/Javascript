@@ -107,6 +107,31 @@ function contarDiasUteis(dataInicio, dataFim) {
     return diasUteis;
 }
 
+/*
+📅 Contexto da Função
+Você está querendo percorrer todos os dias entre dataInicio e dataFim, verificando se cada dia é útil ou não.
+
+🔄 O papel de dataAtual.setDate(dataAtual.getDate() + 1)
+Esse trecho faz o seguinte:
+
+dataAtual.getDate() pega o dia do mês atual (por exemplo, 1, 2, 3, etc.)
+
++ 1 soma um dia
+
+setDate(...) atualiza o objeto dataAtual para o próximo dia
+
+📌 Se você não tiver esse trecho, o while entraria em loop infinito, porque dataAtual nunca avançaria. Ele ficaria preso para sempre comparando o mesmo dia.
+
+🧠 Resumindo:
+js
+Copiar
+Editar
+dataAtual.setDate(dataAtual.getDate() + 1);
+➡️ Avança a data para o próximo dia
+➡️ Sem isso, você nunca sai do primeiro dia
+➡️ É essencial para percorrer corretamente o intervalo
+*/
+
 const diasUteis = contarDiasUteis(dataInicio, dataFim);
 console.log(`Dias úteis entre ${dataInicio.toLocaleDateString('pt-BR')} e ${dataFim.toLocaleDateString('pt-BR')}: ${diasUteis}`);
 
