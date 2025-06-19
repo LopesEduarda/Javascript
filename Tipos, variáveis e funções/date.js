@@ -42,7 +42,7 @@ const events = [
     { name: "Evento C", date: "2024-11-05" },
     { name: "Evento D", date: "2022-09-10" },
     { name: "Evento E", date: "2023-12-31" },
-    { name: "Evento F", date: "2025-01-01" }
+    { name: "Evento F", date: "2027-01-01" }
   ];
 
   // Ordena primeiro, mas mantém as datas ainda como string ISO:
@@ -62,7 +62,7 @@ const events = [
 
     if (dataEvento < dataAtual) {
       eventosPassados.push({
-        ...evento,
+        // ...evento,
         formattedDate: dataEvento.toLocaleDateString('pt-BR')
       });
     } else {
