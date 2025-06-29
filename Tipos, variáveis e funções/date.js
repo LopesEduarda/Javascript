@@ -83,3 +83,28 @@ Trabalha sempre com a data ISO original para comparar e ordenar.
 
 Faz o parseISO apenas quando precisa transformar para Date.
 */
+
+
+
+
+function numerosImpares() {
+  const numerosDe1a100 = Array.from({ length: 100 }, (_, i) => i + 1);
+
+  for (let i = 0; i < numerosDe1a100.length; i++) {
+    const numero = numerosDe1a100[i];
+    // Verifica se o número é ímpar
+    // Um número é ímpar se o resto da divisão por 2 for diferente de 0
+    // essa variável numero é o número atual do loop
+    // O operador % (módulo) retorna o resto da divisão
+    if (numero % 2 !== 0) {
+      console.log(numero);
+    }
+  }
+}
+
+const numeros = [1, 2, 3, 4, 5];
+
+while (numeros.length < 6) {
+  numeros.push(numeros.length + 1);
+  console.log('o número é:', numeros);
+}
